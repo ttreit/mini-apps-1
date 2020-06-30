@@ -17,4 +17,7 @@ body {
   height: 500px;
   grid-template-columns: 1fr 1fr 1fr ;
   grid-template-rows: 1fr 1fr 1fr;
+  color: rgb(17, 7, 166);
+  font-size: 800%;
+  text-align: center;
 }
