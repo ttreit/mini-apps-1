@@ -269,6 +269,33 @@ let squareNine = function() {
   }
 };
 
+let fillArray = function(replacement) {
+  row1.forEach((value, index, array) => {
+    array[index] = replacement;
+  });
+  row2.forEach((value, index, array) => {
+    array[index] = replacement;
+  });
+  row3.forEach((value, index, array) => {
+    array[index] = replacement;
+  });
+};
+
+let restart = function() {
+document.getElementById('one').innerHTML = '';
+document.getElementById('two').innerHTML = '';
+document.getElementById('three').innerHTML = '';
+document.getElementById('four').innerHTML = '';
+document.getElementById('five').innerHTML = '';
+document.getElementById('six').innerHTML = '';
+document.getElementById('seven').innerHTML = '';
+document.getElementById('eight').innerHTML = '';
+document.getElementById('nine').innerHTML = '';
+console.log('before ', row1, row2, row3);
+fillArray(0);
+console.log('after ', row1, row2, row3);
+};
+
 document.getElementById('one').onclick = squareOne;
 document.getElementById('two').onclick = squareTwo;
 document.getElementById('three').onclick = squareThree;
@@ -278,3 +305,6 @@ document.getElementById('six').onclick = squareSix;
 document.getElementById('seven').onclick = squareSeven;
 document.getElementById('eight').onclick = squareEight;
 document.getElementById('nine').onclick = squareNine;
+document.getElementById('restart').onclick = restart;
+
+
