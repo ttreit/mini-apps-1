@@ -1,34 +1,52 @@
+//initialize variables
 let playerTurn = 1;
 let count = 0;
 let row1 = [0, 0, 0];
 let row2 = [0, 0, 0];
 let row3 = [0, 0, 0];
 
-
+//check for winner
 let winnerCheck = function() {
   if (count >= 5) {
     if (row1[0] === row1[1] && row1[0] === row1[2] && row1[0] !== 0) {
-      return document.getElementById('message').innerHTML = `Player ${row1[0]} is the winner!`;
+      document.getElementById('message').innerHTML = `Player ${row1[0]} is the winner!`;
+      fillArray(4);
+      return;
     } else if (row2[0] === row2[1] && row2[0] === row2[2] && row2[0] !== 0) {
-      return document.getElementById('message').innerHTML = `Player ${row2[0]} is the winner!`;
+      document.getElementById('message').innerHTML = `Player ${row2[0]} is the winner!`;
+      fillArray(4);
+      return;
     } else if (row3[0] === row3[1] && row3[0] === row3[2] && row3[0] !== 0) {
-      return document.getElementById('message').innerHTML = `Player ${row3[0]} is the winner!`;
+      document.getElementById('message').innerHTML = `Player ${row3[0]} is the winner!`;
+      fillArray(4);
+      return;
     } else if (row1[0] === row2[0] && row1[0] === row3[0] && row1[0] !== 0) {
-      return document.getElementById('message').innerHTML = `Player ${row1[0]} is the winner!`;
+      document.getElementById('message').innerHTML = `Player ${row1[0]} is the winner!`;
+      fillArray(4);
+      return;
     } else if (row1[1] === row2[1] && row1[1] === row3[1] && row1[1] !== 0) {
-      return document.getElementById('message').innerHTML = `Player ${row1[1]} is the winner!`;
+      document.getElementById('message').innerHTML = `Player ${row1[1]} is the winner!`;
+      fillArray(4);
+      return;
     } else if (row1[2] === row2[2] && row1[2] === row3[2] && row1[2] !== 0) {
-      return document.getElementById('message').innerHTML = `Player ${row1[2]} is the winner!`;
+      document.getElementById('message').innerHTML = `Player ${row1[2]} is the winner!`;
+      fillArray(4);
+      return;
     } else if (row1[0] === row2[1] && row1[0] === row3[2] && row1[0] !== 0) {
-      return document.getElementById('message').innerHTML = `Player ${row1[0]} is the winner!`;
+      document.getElementById('message').innerHTML = `Player ${row1[0]} is the winner!`;
+      fillArray(4);
+      return;
     } else if (row1[2] === row2[1] && row1[2] === row3[0] && row1[2] !== 0) {
-      return document.getElementById('message').innerHTML = `Player ${row1[2]} is the winner!`;
+      document.getElementById('message').innerHTML = `Player ${row1[2]} is the winner!`;
+      fillArray(4);
+      return;
     } else if (count === 9) {
       document.getElementById('message').innerHTML = 'Tie Game';
     }
   }
 }
 
+//Update squares
 let squareOne = function() {
   if (playerTurn === 1) {
     if (row1[0] !== 0) {
@@ -269,6 +287,7 @@ let squareNine = function() {
   }
 };
 
+//helper function for resetting game
 let fillArray = function(replacement) {
   row1.forEach((value, index, array) => {
     array[index] = replacement;
@@ -281,6 +300,7 @@ let fillArray = function(replacement) {
   });
 };
 
+//reset game
 let restart = function() {
 document.getElementById('one').innerHTML = '';
 document.getElementById('two').innerHTML = '';
@@ -295,9 +315,10 @@ fillArray(0);
 playerTurn = 1;
 count = 0;
 document.getElementById('message').innerHTML = '';
-
 };
 
+//listen for events
+  //handle player clicks
 document.getElementById('one').onclick = squareOne;
 document.getElementById('two').onclick = squareTwo;
 document.getElementById('three').onclick = squareThree;
@@ -307,6 +328,7 @@ document.getElementById('six').onclick = squareSix;
 document.getElementById('seven').onclick = squareSeven;
 document.getElementById('eight').onclick = squareEight;
 document.getElementById('nine').onclick = squareNine;
+  //handle restart button clicks
 document.getElementById('restart').onclick = restart;
 
 
