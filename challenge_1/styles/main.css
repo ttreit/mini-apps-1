@@ -22,8 +22,15 @@ body {
   text-align: center;
 }
 
+.button {
+  font-size: medium;
+  margin-bottom: 10px;
+}
+
 #message {
   color: rgb(33, 71, 21);
   font-size: large;
   font-weight: 700;
+  text-align: right;
+  margin-top: 10px;
 }
