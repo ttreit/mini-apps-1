@@ -1,11 +1,14 @@
 let playerTurn = 1;
+let count = 0;
 let row1 = [0, 0, 0];
 let row2 = [0, 0, 0];
 let row3 = [0, 0, 0];
 
 
 let winnerCheck = function() {
+  //check if there is a winner
 
+  //if no winner check if count === 9
 }
 
 let squareOne = function() {
@@ -17,7 +20,8 @@ let squareOne = function() {
     document.getElementById('one').style = 'Color: red';
     playerTurn = 2;
     row1[0] = 1;
-    console.log(row1);
+    count ++;
+
 
 
   } else {
@@ -28,7 +32,8 @@ let squareOne = function() {
     document.getElementById('one').style = 'Color: blue';
     playerTurn = 1;
     row1[0] = 2;
-    console.log(row1);
+    count ++;
+
 
   }
 };
@@ -42,6 +47,7 @@ let squareTwo = function() {
     document.getElementById('two').style = 'Color: red';
     playerTurn = 2;
     row1[1] = 1;
+    count ++;
 
   } else {
     if (row1[1] !== 0) {
@@ -51,6 +57,7 @@ let squareTwo = function() {
     document.getElementById('two').style = 'Color: blue';
     playerTurn = 1;
     row1[1] = 2;
+    count ++;
   }
 };
 
@@ -63,7 +70,7 @@ let squareThree = function() {
     document.getElementById('three').style = 'Color: red';
     playerTurn = 2;
     row1[2] = 1;
-    console.log(row1);
+    count ++;
 
   } else {
     if (row1[2] !== 0) {
@@ -73,7 +80,7 @@ let squareThree = function() {
     document.getElementById('three').style = 'Color: blue';
     playerTurn = 1;
     row1[2] = 2;
-    console.log(row1);
+    count ++;
   }
 };
 
@@ -86,6 +93,8 @@ let squareFour = function() {
     document.getElementById('four').style = 'Color: red';
     playerTurn = 2;
     row2[0] = 1;
+    count ++;
+
   } else {
     if (row2[0] !== 0) {
       return;
@@ -94,6 +103,7 @@ let squareFour = function() {
     document.getElementById('four').style = 'Color: blue';
     playerTurn = 1;
     row2[0] = 2;
+    count ++;
   }
 };
 
@@ -106,6 +116,7 @@ let squareFive = function() {
     document.getElementById('five').style = 'Color: red';
     playerTurn = 2;
     row2[1] = 1
+    count ++;
 
   } else {
     if (row2[1] !== 0) {
@@ -115,6 +126,7 @@ let squareFive = function() {
     document.getElementById('five').style = 'Color: blue';
     playerTurn = 1;
     row2[1] = 2;
+    count ++;
   }
 };
 
@@ -127,6 +139,7 @@ let squareSix = function() {
     document.getElementById('six').style = 'Color: red';
     playerTurn = 2;
     row2[2] = 1;
+    count ++;
 
   } else {
     if (row2[2] !== 0) {
@@ -136,6 +149,7 @@ let squareSix = function() {
     document.getElementById('six').style = 'Color: blue';
     playerTurn = 1;
     row2[2] = 2;
+    count ++;
   }
 };
 
@@ -148,6 +162,7 @@ let squareSeven = function() {
     document.getElementById('seven').style = 'Color: red';
     playerTurn = 2;
     row3[0] = 1;
+    count ++;
 
   } else {
     if (row3[0] !== 0) {
@@ -157,6 +172,7 @@ let squareSeven = function() {
     document.getElementById('seven').style = 'Color: blue';
     playerTurn = 1;
     row3[0] = 2;
+    count ++;
   }
 };
 
@@ -169,6 +185,7 @@ let squareEight = function() {
     document.getElementById('eight').style = 'Color: red';
     playerTurn = 2;
     row3[1] = 1;
+    count ++;
 
   } else {
     if (row3[1] !== 0) {
@@ -178,9 +195,9 @@ let squareEight = function() {
     document.getElementById('eight').style = 'Color: blue';
     playerTurn = 1;
     row3[1] = 3;
+    count ++;
   }
 };
-
 
 let squareNine = function() {
   if (playerTurn === 1) {
@@ -191,6 +208,7 @@ let squareNine = function() {
     document.getElementById('nine').style = 'Color: red';
     playerTurn = 2;
     row3[2] = 1;
+    count ++;
 
   } else {
     if (row3[2] !== 0) {
@@ -200,7 +218,7 @@ let squareNine = function() {
     document.getElementById('nine').style = 'Color: blue';
     playerTurn = 1;
     row3[2] = 2;
-
+    count ++;
   }
 };
 
