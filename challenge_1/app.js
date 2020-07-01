@@ -291,9 +291,11 @@ document.getElementById('six').innerHTML = '';
 document.getElementById('seven').innerHTML = '';
 document.getElementById('eight').innerHTML = '';
 document.getElementById('nine').innerHTML = '';
-console.log('before ', row1, row2, row3);
 fillArray(0);
-console.log('after ', row1, row2, row3);
+playerTurn = 1;
+count = 0;
+document.getElementById('message').innerHTML = '';
+
 };
 
 document.getElementById('one').onclick = squareOne;
