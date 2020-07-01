@@ -4,13 +4,8 @@ let row1 = [0, 0, 0];
 let row2 = [0, 0, 0];
 let row3 = [0, 0, 0];
 
-// if (count === 9) {
-//   //placeholder for message (use alert? Easy but cheesy)
-//   console.log('Tie Game')
-// }
 
 let winnerCheck = function() {
-  //check if there is a winner
   if (count >= 5) {
     if (row1[0] === row1[1] && row1[0] === row1[2] && row1[0] !== 0) {
       return console.log(`Player ${row1[0]} is the winner!`);
@@ -28,10 +23,10 @@ let winnerCheck = function() {
       return console.log(`Player ${row1[0]} is the winner!`);
     } else if (row1[2] === row2[1] && row1[2] === row3[0] && row1[2] !== 0) {
       return console.log(`Player ${row1[2]} is the winner!`);
+    } else if (count === 9) {
+      console.log('Tie Game')
     }
   }
-
-  //if no winner check if count === 9
 }
 
 let squareOne = function() {
@@ -46,8 +41,6 @@ let squareOne = function() {
     count ++;
     winnerCheck();
 
-
-
   } else {
     if (row1[0] !== 0) {
       return
@@ -58,8 +51,6 @@ let squareOne = function() {
     row1[0] = 2;
     count ++;
     winnerCheck();
-
-
   }
 };
 
@@ -74,7 +65,6 @@ let squareTwo = function() {
     row1[1] = 1;
     count ++;
     winnerCheck();
-
 
   } else {
     if (row1[1] !== 0) {
