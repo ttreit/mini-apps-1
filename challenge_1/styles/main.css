@@ -21,3 +21,7 @@ body {
   font-size: 800%;
   text-align: center;
 }
+
+.message {
+  color: rgb(33, 71, 21)
+}
