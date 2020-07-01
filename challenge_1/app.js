@@ -8,23 +8,23 @@ let row3 = [0, 0, 0];
 let winnerCheck = function() {
   if (count >= 5) {
     if (row1[0] === row1[1] && row1[0] === row1[2] && row1[0] !== 0) {
-      return console.log(`Player ${row1[0]} is the winner!`);
+      return document.getElementById('message').innerHTML = `Player ${row1[0]} is the winner!`;
     } else if (row2[0] === row2[1] && row2[0] === row2[2] && row2[0] !== 0) {
-      return console.log(`Player ${row2[0]} is the winner!`);
+      return document.getElementById('message').innerHTML = `Player ${row2[0]} is the winner!`;
     } else if (row3[0] === row3[1] && row3[0] === row3[2] && row3[0] !== 0) {
-      return console.log(`Player ${row3[0]} is the winner!`);
+      return document.getElementById('message').innerHTML = `Player ${row3[0]} is the winner!`;
     } else if (row1[0] === row2[0] && row1[0] === row3[0] && row1[0] !== 0) {
-      return console.log(`Player ${row1[0]} is the winner!`);
+      return document.getElementById('message').innerHTML = `Player ${row1[0]} is the winner!`;
     } else if (row1[1] === row2[1] && row1[1] === row3[1] && row1[1] !== 0) {
-      return console.log(`Player ${row1[1]} is the winner!`);
+      return document.getElementById('message').innerHTML = `Player ${row1[1]} is the winner!`;
     } else if (row1[2] === row2[2] && row1[2] === row3[2] && row1[2] !== 0) {
-      return console.log(`Player ${row1[2]} is the winner!`);
+      return document.getElementById('message').innerHTML = `Player ${row1[2]} is the winner!`;
     } else if (row1[0] === row2[1] && row1[0] === row3[2] && row1[0] !== 0) {
-      return console.log(`Player ${row1[0]} is the winner!`);
+      return document.getElementById('message').innerHTML = `Player ${row1[0]} is the winner!`;
     } else if (row1[2] === row2[1] && row1[2] === row3[0] && row1[2] !== 0) {
-      return console.log(`Player ${row1[2]} is the winner!`);
+      return document.getElementById('message').innerHTML = `Player ${row1[2]} is the winner!`;
     } else if (count === 9) {
-      console.log('Tie Game')
+      document.getElementById('message').innerHTML = 'Tie Game';
     }
   }
 }
