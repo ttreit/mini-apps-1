@@ -4,9 +4,32 @@ let row1 = [0, 0, 0];
 let row2 = [0, 0, 0];
 let row3 = [0, 0, 0];
 
+// if (count === 9) {
+//   //placeholder for message (use alert? Easy but cheesy)
+//   console.log('Tie Game')
+// }
 
 let winnerCheck = function() {
   //check if there is a winner
+  if (count >= 5) {
+    if (row1[0] === row1[1] && row1[0] === row1[2] && row1[0] !== 0) {
+      return console.log(`Player ${row1[0]} is the winner!`);
+    } else if (row2[0] === row2[1] && row2[0] === row2[2] && row2[0] !== 0) {
+      return console.log(`Player ${row2[0]} is the winner!`);
+    } else if (row3[0] === row3[1] && row3[0] === row3[2] && row3[0] !== 0) {
+      return console.log(`Player ${row3[0]} is the winner!`);
+    } else if (row1[0] === row2[0] && row1[0] === row3[0] && row1[0] !== 0) {
+      return console.log(`Player ${row1[0]} is the winner!`);
+    } else if (row1[1] === row2[1] && row1[1] === row3[1] && row1[1] !== 0) {
+      return console.log(`Player ${row1[1]} is the winner!`);
+    } else if (row1[2] === row2[2] && row1[2] === row3[2] && row1[2] !== 0) {
+      return console.log(`Player ${row1[2]} is the winner!`);
+    } else if (row1[0] === row2[1] && row1[0] === row3[2] && row1[0] !== 0) {
+      return console.log(`Player ${row1[0]} is the winner!`);
+    } else if (row1[2] === row2[1] && row1[2] === row3[0] && row1[2] !== 0) {
+      return console.log(`Player ${row1[2]} is the winner!`);
+    }
+  }
 
   //if no winner check if count === 9
 }
@@ -21,6 +44,7 @@ let squareOne = function() {
     playerTurn = 2;
     row1[0] = 1;
     count ++;
+    winnerCheck();
 
 
 
@@ -33,6 +57,7 @@ let squareOne = function() {
     playerTurn = 1;
     row1[0] = 2;
     count ++;
+    winnerCheck();
 
 
   }
@@ -48,6 +73,8 @@ let squareTwo = function() {
     playerTurn = 2;
     row1[1] = 1;
     count ++;
+    winnerCheck();
+
 
   } else {
     if (row1[1] !== 0) {
@@ -58,6 +85,8 @@ let squareTwo = function() {
     playerTurn = 1;
     row1[1] = 2;
     count ++;
+    winnerCheck();
+
   }
 };
 
@@ -71,6 +100,8 @@ let squareThree = function() {
     playerTurn = 2;
     row1[2] = 1;
     count ++;
+    winnerCheck();
+
 
   } else {
     if (row1[2] !== 0) {
@@ -81,6 +112,8 @@ let squareThree = function() {
     playerTurn = 1;
     row1[2] = 2;
     count ++;
+    winnerCheck();
+
   }
 };
 
@@ -94,6 +127,8 @@ let squareFour = function() {
     playerTurn = 2;
     row2[0] = 1;
     count ++;
+    winnerCheck();
+
 
   } else {
     if (row2[0] !== 0) {
@@ -104,6 +139,8 @@ let squareFour = function() {
     playerTurn = 1;
     row2[0] = 2;
     count ++;
+    winnerCheck();
+
   }
 };
 
@@ -117,6 +154,8 @@ let squareFive = function() {
     playerTurn = 2;
     row2[1] = 1
     count ++;
+    winnerCheck();
+
 
   } else {
     if (row2[1] !== 0) {
@@ -127,6 +166,8 @@ let squareFive = function() {
     playerTurn = 1;
     row2[1] = 2;
     count ++;
+    winnerCheck();
+
   }
 };
 
@@ -140,6 +181,8 @@ let squareSix = function() {
     playerTurn = 2;
     row2[2] = 1;
     count ++;
+    winnerCheck();
+
 
   } else {
     if (row2[2] !== 0) {
@@ -150,6 +193,8 @@ let squareSix = function() {
     playerTurn = 1;
     row2[2] = 2;
     count ++;
+    winnerCheck();
+
   }
 };
 
@@ -163,6 +208,8 @@ let squareSeven = function() {
     playerTurn = 2;
     row3[0] = 1;
     count ++;
+    winnerCheck();
+
 
   } else {
     if (row3[0] !== 0) {
@@ -173,6 +220,8 @@ let squareSeven = function() {
     playerTurn = 1;
     row3[0] = 2;
     count ++;
+    winnerCheck();
+
   }
 };
 
@@ -186,6 +235,8 @@ let squareEight = function() {
     playerTurn = 2;
     row3[1] = 1;
     count ++;
+    winnerCheck();
+
 
   } else {
     if (row3[1] !== 0) {
@@ -194,8 +245,10 @@ let squareEight = function() {
     document.getElementById('eight').innerHTML = 'O';
     document.getElementById('eight').style = 'Color: blue';
     playerTurn = 1;
-    row3[1] = 3;
+    row3[1] = 2;
     count ++;
+    winnerCheck();
+
   }
 };
 
@@ -209,6 +262,8 @@ let squareNine = function() {
     playerTurn = 2;
     row3[2] = 1;
     count ++;
+    winnerCheck();
+
 
   } else {
     if (row3[2] !== 0) {
@@ -219,6 +274,8 @@ let squareNine = function() {
     playerTurn = 1;
     row3[2] = 2;
     count ++;
+    winnerCheck();
+
   }
 };
 
