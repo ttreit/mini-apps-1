@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset='utf-8'>
-    <title>CSV Report Generator</title>
+    <meta charset='utf-a'>
+    <title>CSV Report</title>
     <meta name='author' content='Tammy Treit'>
-    <meta name='description' content='A client/server app that generates CSV reports'>
+    <meta name='description' content='CSV data converted from a JSON object'>
     <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
   </head>
   <body>
-    <h1>Convert JSON to CSV</h1>
+<div id='json'></div>
+<div id='csv'></div>
+<h1>Convert JSON to CSV</h1>
     <label for='enterjson'>Enter your JSON here:</label>
     <textarea
-      id='enterjson' name='enterjson'
+      id='inputjson' name='inputjson'
       rows='10' cols='40'>
     </textarea>
     <button
@@ -21,4 +23,3 @@
     </button>
   </body>
 </html>
-
