@@ -9,11 +9,11 @@ const testData = {
   {
     "test": 'TEST',  //remove this
     "firstName": "Beth Jr.",
-    "lastName": "Johnson",
-    "county": "San Mateo",
-    "city": "Pacifica",
-    "role": "Manager",
-    "sales": 2900000,
+    // "lastName": "Johnson",
+    // "county": "San Mateo",
+    // "city": "Pacifica",
+    // "role": "Manager",
+    // "sales": 2900000,
     "children": [
       {
         "firstName": "Smitty",
@@ -62,12 +62,12 @@ const testData2 = {
 let convertToCsv = function(req, res, next){
   const csvRows = [];
   //Get all keys and put in set
-  let keySet = new Set();
+  const keySet = new Set();
 
   let getColumns = function(dataObj) {
     //do the work
     //work: get column labels
-    for (key in dataObj) {
+    for (const key in dataObj) {
       if (key !== 'children') {
         keySet.add(key);
       }
@@ -81,18 +81,28 @@ let convertToCsv = function(req, res, next){
         //recurse
         getColumns(children[i]);
       }
-
     }
-    console.log('****KEYSET ', keySet);
   };
 
   let getValues = function(dataObj) {
-
-
+    let row = '';
+    keySet.forEach((element) => {
+      row = row + dataObj[element] + ', ';
+    });
+    row = row.substring(0, row.length - 2); //remove trailing comma
+    csvRows.push(row);
+    let children = dataObj.children;
+    if (children.length > 0) {
+      for (let i = 0; i < children.length; i++) {
+        getValues(children[i])
+      }
+    }
   };
 
   getColumns(testData);  //TODO replace with correct argument
+  getValues(testData); //TODO replace
 
+  console.log(csvRows);
 
 };
 
