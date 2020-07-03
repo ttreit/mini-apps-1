@@ -12,5 +12,9 @@ app.get('/', (req, res) => {
   res.sendFile('./index.html', options);
 });
 
+app.post('/', (req, res) => {
+
+});
+
 app.listen(port, () => console.log(`Server up and running on port ${port}`));
 
