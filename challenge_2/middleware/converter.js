@@ -21,6 +21,7 @@ const testData = {
         "county": "San Mateo",
         "city": "Redwood City",
         "role": "Sales Person",
+        "TREASURE": "test value",
         "sales": 4800000,
         "children": []
       },
@@ -41,33 +42,61 @@ const testData = {
     "county": "San Francisco",
     "city": "San Francisco",
     "role": "Broker/Sales Person",
+    "SIBLING": "sibling",
     "sales": 7500000,
     "children": []
   }
 ]
 }
 
+const testData2 = {
+  "firstName": "Joshie",
+  "lastName": "Wyattson",
+  "county": "San Mateo",
+  "city": "San Mateo",
+  "role": "Broker",
+  "sales": 1000000,
+  "children": []
+  }
+
 let convertToCsv = function(req, res, next){
   const csvRows = [];
   //Get all keys and put in set
-  let parseData = function(dataObj) {
-    let keySet = new Set();
+  let keySet = new Set();
+
+  let getColumns = function(dataObj) {
     //do the work
+    //work: get column labels
     for (key in dataObj) {
       if (key !== 'children') {
         keySet.add(key);
       }
     }
     //check base case
-    //move toward base case
-    //recurse
+    let children = dataObj.children;
+    //check: are there children?
+    if (children.length > 0) {
+      //move toward base case
+      for (let i = 0; i < children.length; i++) {
+        //recurse
+        getColumns(children[i]);
+      }
+
+    }
     console.log('****KEYSET ', keySet);
   };
-  parseData(testData);  //TODO replace with correct argument
+
+  let getValues = function(dataObj) {
+
+
+  };
+
+  getColumns(testData);  //TODO replace with correct argument
+
+
 };
 
 convertToCsv();
-
 
 
 module.exports = convertToCsv;
