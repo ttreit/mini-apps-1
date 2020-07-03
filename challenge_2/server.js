@@ -1,9 +1,12 @@
 const express = require('express');
 const http = require('http');
 const path = require('path');
+const liveLog = require('./middleware/liveLog');
 
 const app = express();
 const port = process.env.port || 3500;
+
+app.use(liveLog);
 
 app.get('/', (req, res) => {
   let options = {
