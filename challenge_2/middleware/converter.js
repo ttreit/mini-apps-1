@@ -101,7 +101,6 @@ let convertToCsv = function(req, res, next){
 
   getColumns(testData);  //TODO replace with correct argument
   getValues(testData); //TODO replace
-
   console.log(csvRows);
 
 };
@@ -113,20 +112,5 @@ module.exports = convertToCsv;
 
 
 
-  // keySet.add('firstName');
-  // keySet.add('lastName');
-  // console.log('*** keySet' ,keySet);
-  //const row1 = Object.keys(testData);
 
-  //create array to hold strings
-  //hookup test data (DEV ONLY)
-  //get keys for first line of csv
-  //NOTE: Child objects may have different properties - deal with this at the end if time simple solution first
-      //add commas between each
-      //add to array[0] (write to file maybe?);
-    //get values for all other lines
-    //add to array[1 ff]
-    //construct string to return
-      //array item 1 - arraylength -1 (fifo)
-      //each item on it's own line
   //next();  TODO uncomment after testing done
