@@ -1,0 +1,15 @@
+body {
+  font-family: system-ui, sans-serif;
+}
+
+h1 {
+  color: rgb(11, 74, 169);
+  text-align: center;
+}
+
+form {
+  margin: 0 auto;
+  width: 400px;
+  padding: 1em;
+}
+

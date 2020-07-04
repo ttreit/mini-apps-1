@@ -15,6 +15,14 @@ app.get('/', (req, res) => {
   res.sendFile('./index.html', options);
 });
 
+app.get('/styles/main.css', (req, res) => {
+  let options = {
+    root: path.join(__dirname, 'public', 'styles')
+  }
+  res.sendFile('./main.css', options);
+});
+
+
 app.post('/', (req, res) => {
 
 });

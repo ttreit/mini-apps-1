@@ -5,20 +5,20 @@
     <title>CSV Report Generator</title>
     <meta name='author' content='Tammy Treit'>
     <meta name='description' content='A client/server app that generates CSV reports'>
+    <link rel='stylesheet' href='./styles/main.css'>
     <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
     <script src='app.js'></script>
   </head>
   <body>
     <h1>Convert JSON to CSV</h1>
     <form action='/' method='post'>
-      <label for='enterjson'>Enter your JSON</label>
+      <label for='inputjson'>Enter JSON</label>
       <textarea
         id='inputjson' name='inputjson'
         rows='10' cols='40'>
       </textarea>
       <button
-          id='submit'
-          type='button'>
+          type='submit'>
         Get CSV!
       </button>
     </form>
