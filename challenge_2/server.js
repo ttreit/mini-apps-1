@@ -4,7 +4,6 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const qs = require('querystring');
 const liveLog = require('./middleware/liveLog');
-const createObj = require('./middleware/createobject');
 const converter = require('./middleware/converter');
 
 
