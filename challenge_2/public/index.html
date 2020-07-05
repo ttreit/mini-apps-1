@@ -7,12 +7,11 @@
     <meta name='description' content='A client/server app that generates CSV reports'>
     <link rel='stylesheet' href='./styles/main.css'>
     <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
-    <script src='app.js'></script>
   </head>
   <body>
     <h1>Convert JSON to CSV</h1>
 
-    <form action='/' method='POST'>
+    <form action='/' method='POST' enctype="application/json">
       <label for='json'>Enter JSON</label>
       <textarea
         id='json' name='input_json'
