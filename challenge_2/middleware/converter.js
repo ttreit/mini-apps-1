@@ -1,4 +1,7 @@
 let convertToCsv = function(req, res, next){
+  if (req.body.input_json === undefined) {
+    console.log('EMPTY!!!');
+  } else {
   const csvRows = [];
   //Get all keys and put in set
   const keySet = new Set();
@@ -6,12 +9,15 @@ let convertToCsv = function(req, res, next){
   let getColumns = function(dataObj) {
     //do the work
     //work: get column labels
+    console.log('---------DATAOBJ------', dataObj)
+    console.log('TYPEOF DATAOBJ: ', typeof dataObj);
     for (const key in dataObj) {
       if (key !== 'children') {
         keySet.add(key);
       }
     }
     //check base case
+    console.log('DATAOBJ: ', dataObj);
     let children = dataObj.children;
     //check: are there children?
     if (children.length > 0) {
@@ -38,18 +44,17 @@ let convertToCsv = function(req, res, next){
     }
   };
 
-  getColumns(testData);  //TODO replace with correct argument
-  getValues(testData); //TODO replace
+  console.log('*****data**** ', req.body.input_json);
+  getColumns(JSON.parse(req.body.input_json));  //TODO replace with correct argument
+  getValues(JSON.parse(req.body.input_json)); //TODO replace
   console.log(csvRows);
+}
 
+  next();
 };
-
-convertToCsv();
-
 
 module.exports = convertToCsv;
 
 
 
 
-  //next();  TODO uncomment after testing done
