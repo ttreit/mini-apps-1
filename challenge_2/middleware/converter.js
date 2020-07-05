@@ -9,15 +9,12 @@ let convertToCsv = function(req, res, next){
   let getColumns = function(dataObj) {
     //do the work
     //work: get column labels
-    console.log('---------DATAOBJ------', dataObj)
-    console.log('TYPEOF DATAOBJ: ', typeof dataObj);
     for (const key in dataObj) {
       if (key !== 'children') {
         keySet.add(key);
       }
     }
     //check base case
-    console.log('DATAOBJ: ', dataObj);
     let children = dataObj.children;
     //check: are there children?
     if (children.length > 0) {
@@ -28,6 +25,15 @@ let convertToCsv = function(req, res, next){
       }
     }
   };
+
+  let getTopRow = function(columnData) {
+    let topRow = '';
+    keySet.forEach((element) => {
+      topRow= topRow + element + ', ';
+    });
+    topRow = topRow.substring(0, topRow.length - 2);
+    csvRows.push(topRow);
+  }
 
   let getValues = function(dataObj) {
     let row = '';
@@ -44,10 +50,10 @@ let convertToCsv = function(req, res, next){
     }
   };
 
-  console.log('*****data**** ', req.body.input_json);
-  getColumns(JSON.parse(req.body.input_json));  //TODO replace with correct argument
-  getValues(JSON.parse(req.body.input_json)); //TODO replace
-  console.log(csvRows);
+  getColumns(JSON.parse(req.body.input_json));
+  getTopRow();
+  getValues(JSON.parse(req.body.input_json));
+  console.log('CSV ROWS: ', csvRows);
 }
 
   next();
