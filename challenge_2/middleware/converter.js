@@ -53,7 +53,14 @@ let convertToCsv = function(req, res, next){
   getColumns(JSON.parse(req.body.input_json));
   getTopRow();
   getValues(JSON.parse(req.body.input_json));
-  console.log('CSV ROWS: ', csvRows);
+
+  let csvData = ''
+  for (let i = 0; i < csvRows.length - 1; i++) {
+    csvData = csvData + csvRows[i] + '\n';
+  }
+  req.csvData = csvData;
+  res.csvData = csvData;
+
 }
 
   next();

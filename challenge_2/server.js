@@ -26,7 +26,8 @@ app.post('/', (req, res) => {
   let options = {
     root: path.join(__dirname, 'public')
   }
-  res.status(200).sendFile('./index.html', options);
+  console.log(res.csvData);
+  res.status(200).sendFile('./results.html', options);
 });
 
 
