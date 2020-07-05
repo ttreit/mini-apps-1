@@ -1,5 +1,17 @@
 let createObj = function(req, res, next) {
-  console.log('CO: ', Object.keys(req.body));
+  console.log('Object.keys(req.body): ', Object.keys(req.body));
+  if (Object.keys.length === 0) {
+    console.log('Object.keys was empty');
+    return;
+  } else {
+    console.log('CO2: ', req.body.input_json); //This one
+    if (req.body.input_json === '') {
+    } else {
+      console.log('TYPEOF: ', typeof req.body.input_json);
+    }
+    //let result = JSON.parse(req.body.input_json);
+    //console.log(result);    //req.csvJson = result;
+  }
 
   next();
 };
