@@ -58,11 +58,12 @@ let convertToCsv = function(req, res, next){
   getValues(JSON.parse(req.body.input_json));
 
   let csvData = ''
-  for (let i = 0; i < csvRows.length - 1; i++) {
+  for (let i = 0; i < csvRows.length; i++) {
     csvData = csvData + csvRows[i] + '\n';
   }
   req.csvData = csvData;
   res.csvData = csvData;
+  console.log('CSV**** ', csvData);
   let downLoadPath = path.join(__dirname, '../public', 'csvReport.csv')
   fs.writeFileSync(downLoadPath, csvData);
 }
