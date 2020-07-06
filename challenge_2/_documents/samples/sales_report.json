@@ -12,6 +12,7 @@
       "county": "San Mateo",
       "city": "Pacifica",
       "role": "Manager",
+      "EXTRA": "Testing Extra",
       "sales": 2900000,
       "children": [
         {
