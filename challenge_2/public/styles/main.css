@@ -13,3 +13,9 @@ form {
   padding: 1em;
 }
 
+#results {
+  color: rgb(63, 0, 63);
+  text-align: center;
+  /* visibility: hidden; (visible) */
+}
+
