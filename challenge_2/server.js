@@ -1,6 +1,7 @@
 const express = require('express');
 const http = require('http');
 const path = require('path');
+const fs = require('fs');
 const liveLog = require('./middleware/liveLog');
 const converter = require('./middleware/converter');
 
@@ -27,6 +28,7 @@ app.post('/', (req, res) => {
     root: path.join(__dirname, 'public')
   }
   console.log(res.csvData);
+  //add to results.html
   res.status(200).sendFile('./results.html', options);
 });
 
@@ -36,6 +38,13 @@ app.get('/styles/main.css', (req, res) => {
     root: path.join(__dirname, 'public', 'styles')
   }
   res.sendFile('./main.css', options);
+});
+
+app.get('/download', (req, res) => {
+  let options = {
+    root: path.join(__dirname, 'public')
+  }
+  res.sendFile('./csvReport.csv', options);
 });
 
 

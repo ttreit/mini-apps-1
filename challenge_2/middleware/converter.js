@@ -1,3 +1,6 @@
+const fs = require('fs');
+const path = require('path');
+
 let convertToCsv = function(req, res, next){
   if (req.body.input_json === undefined) {
     console.log('EMPTY!!!');
@@ -60,7 +63,8 @@ let convertToCsv = function(req, res, next){
   }
   req.csvData = csvData;
   res.csvData = csvData;
-
+  let downLoadPath = path.join(__dirname, '../public', 'csvReport.csv')
+  fs.writeFileSync(downLoadPath, csvData);
 }
 
   next();
