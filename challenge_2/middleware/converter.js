@@ -65,7 +65,7 @@ let convertToCsv = function(req, res, next){
   res.csvData = csvData;
   console.log('CSV**** ', csvData);
   let downLoadPath = path.join(__dirname, '../public', 'csvReport.csv')
-  fs.writeFileSync(downLoadPath, csvData);
+  fs.writeFileSync(downLoadPath, csvData); //could not get async version to work - look at this again
 }
 
   next();
