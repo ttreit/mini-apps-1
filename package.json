@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./challenge_2/server.js",
-    "dev": "nodemon ./challenge_2/server.js"
+    "start": "node ./challenge_3/server.js",
+    "dev": "nodemon ./challenge_3/server.js"
   },
   "repository": {
     "type": "git",
@@ -28,7 +28,10 @@
     "express-static": "^1.2.6",
     "html": "^1.0.0",
     "jquery": "^3.5.1",
+    "mysql": "^2.18.1",
     "node": "^14.5.0",
-    "pug": "^3.0.0"
+    "pug": "^3.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
