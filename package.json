@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./challenge_3/server.js",
-    "dev": "nodemon ./challenge_3/server.js"
+    "dev": "nodemon ./challenge_3/server.js",
+    "build":" babel . --out-dir compiled --presets=react --ignore=node_modules,compiled --source-maps inline --watch"
   },
   "repository": {
     "type": "git",
@@ -19,11 +20,14 @@
   },
   "homepage": "https://github.com/ttreit/rpt22-mini-apps-1#readme",
   "devDependencies": {
-    "@babel/preset-react": "^7.10.4",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-react": "^1.0.0",
+    "babel-preset-react": "^6.24.1",
     "eslint": "^7.3.1",
     "nodemon": "^2.0.4"
   },
   "dependencies": {
+    "babel": "^6.23.0",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "express-static": "^1.2.6",
