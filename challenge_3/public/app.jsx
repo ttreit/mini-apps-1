@@ -1,10 +1,18 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
+//create components
 
-const App = () => {
-  return <h1>Hello World!</h1>
+//MainContainer
+const MainContainer = <CompanyName companyname='Stuff Mart' />;
+
+//CompanyName
+function CompanyName(props) {
+  return <h1>Welcome to {props.companyname}!</h1>
 }
-ReactDOM.render(<App />, document.getElementById('root'));
 
 
 
+//Add to Dom
+
+ReactDOM.render(
+  MainContainer,
+  document.getElementById('root')
+);

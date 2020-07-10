@@ -1,9 +1,6 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
+//create Heading Component
 
-const App = () => {
-  return <h1>Hello World! Raaar!</h1>
-}
-ReactDOM.render(<App />, document.getElementById('root'));
+//CompanyName
 
-//testing git
+
+//MainContainer
