@@ -33,7 +33,7 @@ function MainButton(props) {
 //DataForm
 function DataForm() {
   return (
-  <form action ='/submit' method='get' className='dataform'>
+  <form action ='/submit' method='post' className='dataform'>
     <div className='dataform'>
       <label>
         Name:
